@@ -1,3 +1,8 @@
+" 这是一份基于 Ubuntu 18.04 的配置， 其他环境未测试
+"
+"==============================================================================
+" 处理 Gnome 终端不能使用 alt 快捷键
+" 参考：http://landcareweb.com/questions/8623/altjian-kuai-jie-jian-bu-gua-yong-yu-dai-you-vimde-gnomezhong-duan
 "==============================================================================
 let c='a'
 while c <= 'z'
@@ -149,6 +154,8 @@ Plugin 'iamcco/markdown-preview.vim'
 " 自动生成注释的插件
 Plugin 'scrooloose/nerdcommenter'
 
+Plugin 'rdnetto/YCM-Generator'
+
 " 插件结束的位置，插件全部放在此行上面
 call vundle#end()
 filetype plugin indent on
@@ -195,7 +202,7 @@ autocmd FileType go nmap <leader>r :GoRun %<CR>
 "==============================================================================
 
 " 打开和关闭NERDTree快捷键
-map <F10> :NERDTreeToggle<CR>
+map <F8> :NERDTreeToggle<CR>
 nmap <M-m> :NERDTreeFind<CR>
 
 " 显示行号
@@ -280,6 +287,7 @@ nmap <Leader>pwd :NERDTreeCWD<CR>
 let g:ycm_key_list_select_completion = ['<M-j>', '<DOWN>']
 let g:ycm_key_list_previous_completion = ['<M-k>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<M-j>'
+let g:ycm_max_diagnostics_to_display = 0
 
 " 关闭了提示再次触发的快捷键
 let g:ycm_key_invoke_completion = '<Leader>,'
