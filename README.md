@@ -1,18 +1,11 @@
-# vimrc
----
-## Ubuntu环境搭建，目前在ubuntu18.04LTS实践可用。其他系统版本请酌情使用
-
-### 下载并源码编译安装vim
+## 下载并源码编译安装vim
 由于apt安装源安装的vim并不支持python、lua等插件，所有需要下载vim源码编译安装以支持
-先卸载apt安装的vim
-```shell
-sudo apt autoremove --purge vim
-```
-然后编译安装vim
+
 ```shell
 git clone https://github.com/vim/vim.git
 cd vim
 git checkout -b v8.1.1564 8.1.1564
+sudo apt install python-dev python3-dev ruby-dev lua5.1 lua5.1-dev libncurses5-dev libperl-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 ./configure --with-features=huge --enable-pythoninterp --enable-rubyinterp --enable-luainterp --enable-perlinterp --with-python-config-dir=/usr/lib/python2.7/config/ --enable-gui=gtk2 --enable-cscope --prefix=/usr
 make
 make install
@@ -23,11 +16,11 @@ make install
 ```
 若输出 1 则表示构建出的 vim 已支持 python，反之，0 则不支持。
 
-### 安装bundle插件
+## 安装bundle插件
 ```shell
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-### 插件管理
+## 插件管理
 插件安装
 ```shell
 :PluginInstall
@@ -41,7 +34,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 :PluginUpdate
 ```
 
-### 安装YouComplete插件
+## 安装YouComplete插件
 ```shell
 cd ~/.vim/bundle/YouComplete
 ./install.py --gocode-completer --clang-completer --go-completer
