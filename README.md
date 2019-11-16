@@ -36,6 +36,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ## 安装YouComplete插件
 ```shell
-cd ~/.vim/bundle/YouComplete
+cd ~/.vim/bundle/YouCompleteMe
 ./install.py --gocode-completer --clang-completer --go-completer
 ```
